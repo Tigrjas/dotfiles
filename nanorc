@@ -1,0 +1,28 @@
+# Enable line numbers
+set linenumbers
+
+# Set tab size to 4 spaces and convert tabs to spaces
+set tabsize 4
+set tabstospaces
+
+# Enable soft line wrapping
+set softwrap
+
+# Enable syntax highlighting
+include "/usr/share/nano/*.nanorc"
+
+# Enable mouse support
+set mouse
+
+# Show the current cursor position
+set constantshow
+
+# Enable auto-indent
+set autoindent
+
+# Colorful error messages
+set statuscolor "red,white"
+
+# Custom keyboard shortcuts
+bind ^Z undo main        # Ctrl + Z to undo
+bind ^Y redo main        # Ctrl + Y to redo
