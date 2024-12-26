@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Function to display image previews with kitty icat
+draw() {
+  kitten icat --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$1" </dev/null >/dev/tty
+  exit 1  # Exit after the image preview to avoid further processing
+}
+
+# File and position parameters
+file="$1"
+w="$2"
+h="$3"
+x="$4"
+y="$5"
+
+# Preview based on MIME type
+case "$(file -Lb --mime-type "$file")" in
+  text/*)
+    # Use bat for text file previews
+    batcat --style=full --color=always --line-range :500 "$file"
+    ;;
+  image/*)
+    # Show image preview with kitty
+    draw "$file"
+    ;;
+  video/*)
+    # Use vidthumb for video preview (if applicable)
+    # Ensure the vidthumb command is working, otherwise omit or replace with other preview logic
+    draw "$(vidthumb "$file")"
+    ;;
+  *)
+    # For unsupported file types, fall back to pistol (or leave it out for no preview)
+    pistol "$file"
+    ;;
+esac

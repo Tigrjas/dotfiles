@@ -1,0 +1,17 @@
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+# Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+# Custom Keybindings
+map <delete> delete
+map <enter> shell
