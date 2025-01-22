@@ -14,7 +14,7 @@
         "break",
         {
             "type": "title",
-            "key": " PC",
+            "key": "PC",
             "keyColor": "green"
         },
         {
@@ -40,13 +40,13 @@
         },
         {
             "type": "disk",
-            "key": " Storage",
+            "key": "Storage",
             "keyColor": "green"
         },
         "break",
         {
             "type": "os",
-            "key": " OS",
+            "key": "OS",
             "keyColor": "yellow"
         },
         {
